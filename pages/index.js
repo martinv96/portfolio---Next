@@ -7,6 +7,7 @@ import Intro from "../components/Intro";
 import SectionProjets from "../components/SectionProjets";
 import Apropos from "../components/Apropos";
 import ParticlesBackground from "../components/ParticlesBackground";
+import Competences from "../components/Competences";
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
@@ -35,17 +36,21 @@ export default function Home() {
 
       {!showIntro && (
         <>
-          <ParticlesBackground />
-
+          {/* Particules visibles uniquement sur Hero */}
+          <div>
+            <ParticlesBackground />
             <Navbar />
-          <div className="relative z-[-1]">
             <main>
               <Hero />
+            <Apropos />
             </main>
           </div>
-              <Apropos />
-              <SectionProjets />
-              {/* autres sections */}
+
+          {/* Sections sans fond de particules */}
+          <div className="relative z-10">
+            <Competences />
+            <SectionProjets />
+          </div>
         </>
       )}
     </>
