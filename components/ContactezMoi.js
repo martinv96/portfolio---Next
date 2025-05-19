@@ -43,7 +43,7 @@ export default function ContactezMoi() {
   };
 
   return (
-    <section className="w-full py-20 px-4 text-black" id="contact">
+    <section className="w-full py-20 px-4 text-black border-t border-gray-300" id="contact">
       <motion.div
         className="max-w-3xl mx-auto"
         initial={{ opacity: 0, y: 40 }}

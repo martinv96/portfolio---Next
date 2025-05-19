@@ -70,14 +70,14 @@ export default function Hero() {
       style={{ backgroundColor: "#212529" }}
     >
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
-        <AnimatedText text="Bienvenue, je suis Martin, développeur web." isHeading />
+        <AnimatedText text="Bienvenue ! Je suis Martin, développeur web." isHeading />
       </h1>
       <p className="text-base sm:text-lg md:text-xl max-w-xl mb-6 px-2 sm:px-0">
         <AnimatedText text="Développeur web passionné, je crée des expériences digitales modernes." />
       </p>
       <button
         onClick={handleScrollToContact}
-        className="bg-blue-600 text-white px-6 py-3 rounded w-full max-w-xs sm:max-w-sm mx-auto hover:bg-blue-700 transition text-center block"
+        className="bg-blue-600 text-white px-6 py-3 rounded w-full max-w-xs sm:max-w-sm mx-auto hover:bg-blue-700 transition text-center block relative z-20"
       >
         Contactez-moi
       </button>

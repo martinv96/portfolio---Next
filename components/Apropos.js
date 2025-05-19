@@ -44,7 +44,7 @@ export default function Apropos() {
             <a
               href="/cv.pdf"
               download
-              className="inline-block bg-white text-red-600 font-semibold px-6 py-3 rounded shadow hover:bg-red-100 transition"
+              className="inline-block bg-white text-red-600 font-semibold px-6 py-3 rounded shadow hover:bg-red-100 transition relative z-20"
             >
               Télécharger mon CV
             </a>
