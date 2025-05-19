@@ -8,6 +8,7 @@ import SectionProjets from "../components/SectionProjets";
 import Apropos from "../components/Apropos";
 import ParticlesBackground from "../components/ParticlesBackground";
 import Competences from "../components/Competences";
+import ContactezMoi from "../components/ContactezMoi";
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
@@ -50,6 +51,7 @@ export default function Home() {
           <div className="relative z-10">
             <Competences />
             <SectionProjets />
+            <ContactezMoi />
           </div>
         </>
       )}

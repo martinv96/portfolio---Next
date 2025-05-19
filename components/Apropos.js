@@ -38,6 +38,17 @@ export default function Apropos() {
           <p className="text-lg mb-6">
             Aujourd'hui, je suis à la recherche de nouvelles opportunités professionnelles où je pourrai contribuer à des projets innovants et continuer à me perfectionner.
           </p>
+
+          {/* Bouton de téléchargement */}
+          <div className="mt-8 text-center md:text-left">
+            <a
+              href="/cv.pdf"
+              download
+              className="inline-block bg-white text-red-600 font-semibold px-6 py-3 rounded shadow hover:bg-red-100 transition"
+            >
+              Télécharger mon CV
+            </a>
+          </div>
         </div>
       </motion.div>
     </section>

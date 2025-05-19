@@ -127,6 +127,15 @@ export default function Navbar() {
             Projets
           </button>
         </li>
+        <li>
+          <button
+            onClick={() => scrollToSection("#contact")}
+            className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center"
+          >
+            Contact
+          </button>
+        </li>
+
       </ul>
     </nav>
   );
