@@ -92,7 +92,7 @@ export default function Navbar({ theme, setTheme }) {
         Martin
       </div>
 
-      {/* Bouton toggle thème */}
+      {/* Bouton toggle thèmme */}
       <button
         onClick={toggleTheme}
         aria-label="Toggle theme"
