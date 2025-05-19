@@ -1,12 +1,18 @@
 import { useState, useEffect, useRef } from "react";
 
-export default function Navbar() {
+export default function Navbar({ theme, setTheme }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const [maxHeight, setMaxHeight] = useState("0px");
   const [isMobile, setIsMobile] = useState(false);
 
+  // Toggle thème
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
+  // Détection scroll
   useEffect(() => {
     function handleScroll() {
       setScrolled(window.scrollY > 50);
@@ -15,6 +21,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Détection resize
   useEffect(() => {
     function handleResize() {
       setIsMobile(window.innerWidth < 768);
@@ -28,12 +35,19 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Gestion maxHeight menu
   useEffect(() => {
     if (menuRef.current) {
       setMaxHeight(menuOpen ? `${menuRef.current.scrollHeight}px` : "0px");
     }
   }, [menuOpen]);
 
+  // Sauvegarde thème dans localStorage
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  // Scroll vers section
   const scrollToSection = (id) => {
     const section = document.querySelector(id);
     if (section) {
@@ -42,17 +56,34 @@ export default function Navbar() {
     }
   };
 
-  const mobileMenuBgClass =
-  isMobile
-    ? (scrolled ? "bg-white text-black" : "bg-[rgb(33,37,41)] text-white")
-    : (scrolled ? "bg-white text-black" : "bg-transparent text-white");
+  // Classes dynamiques navbar selon scroll et thème
+  const navbarClass = scrolled
+    ? theme === "light"
+      ? "bg-white text-black shadow-md"
+      : "bg-gray-900 text-white shadow-md"
+    : theme === "light"
+      ? "bg-white text-black"
+      : "bg-transparent text-white";
 
+  const mobileMenuBgClass = isMobile
+    ? scrolled
+      ? theme === "light"
+        ? "bg-white text-black"
+        : "bg-gray-900 text-white"
+      : theme === "light"
+        ? "bg-white text-black"
+        : "bg-transparent text-white"
+    : scrolled
+      ? theme === "light"
+        ? "bg-white text-black"
+        : "bg-gray-900 text-white"
+      : theme === "light"
+        ? "bg-white text-black"
+        : "bg-transparent text-white";
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full flex justify-between items-center py-4 px-6 z-50 transition-colors duration-300 ${
-        scrolled ? "bg-white text-black shadow-md" : "bg-transparent text-white"
-      }`}
+      className={`fixed top-0 left-0 w-full flex justify-between items-center py-4 px-6 z-50 transition-colors duration-300 ${navbarClass}`}
     >
       <div
         className="text-xl font-bold cursor-pointer"
@@ -60,6 +91,20 @@ export default function Navbar() {
       >
         Martin
       </div>
+
+      {/* Bouton toggle thème */}
+      <button
+        onClick={toggleTheme}
+        aria-label="Toggle theme"
+        title="Changer le thème clair/sombre"
+        className={`mr-4 p-2 rounded transition 
+    ${theme === "light"
+            ? "hover:bg-gray-400 hover:text-white"
+            : "hover:bg-white hover:text-black"
+          }`}
+      >
+        {theme === "light" ? "🔆" : "🌙"}
+      </button>
 
       <button
         onClick={() => setMenuOpen(!menuOpen)}
@@ -101,10 +146,10 @@ export default function Navbar() {
         style={
           isMobile
             ? {
-                maxHeight: maxHeight,
-                opacity: menuOpen ? 1 : 0,
-                pointerEvents: menuOpen ? "auto" : "none",
-              }
+              maxHeight: maxHeight,
+              opacity: menuOpen ? 1 : 0,
+              pointerEvents: menuOpen ? "auto" : "none",
+            }
             : {}
         }
       >

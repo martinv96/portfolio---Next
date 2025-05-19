@@ -24,20 +24,21 @@ export default function Apropos() {
         {/* Texte */}
         <div className="max-w-3xl text-justify">
           <h2 className="text-4xl font-bold mb-8 text-center md:text-left">
-            Faisons connaissance
+            Parlons un peu de moi
           </h2>
 
           <p className="text-lg mb-6">
-            Je m'appelle Martin, j'ai 28 ans et je suis développeur web et web mobile récemment diplômé. Après une reconversion professionnelle, j'ai choisi de me former aux technologies du web et je suis maintenant prêt à débuter ma carrière en tant que développeur junior.
-          </p>
+  Je m'appelle Martin, développeur web passionné de 28 ans. Après une reconversion professionnelle réfléchie, j’ai entrepris une formation intensive au développement web et web mobile, avec pour objectif de donner un nouveau sens à ma carrière à travers la création d’outils numériques utiles et modernes.
+</p>
 
-          <p className="text-lg mb-6">
-            Au cours de ma formation, j'ai travaillé sur plusieurs projets passionnants, dont deux principaux : EasyDealz et Teona Passenger. Ces projets m'ont permis de perfectionner mes compétences en Symfony, React, PHP et bien plus encore.
-          </p>
+<p className="text-lg mb-6">
+  Au fil de ma formation, j’ai eu l’opportunité de travailler sur plusieurs projets concrets, notamment <strong>EasyDealz</strong> et <strong>Teona Passenger</strong>. Ces expériences m’ont permis de développer mes compétences techniques en <strong>Symfony</strong>, <strong>React</strong>, <strong>PHP</strong> ou encore <strong>JavaScript</strong>, tout en adoptant de bonnes pratiques de développement (versioning, API, responsive design...).
+</p>
 
-          <p className="text-lg mb-6">
-            Aujourd'hui, je suis à la recherche de nouvelles opportunités professionnelles où je pourrai contribuer à des projets innovants et continuer à me perfectionner.
-          </p>
+<p className="text-lg mb-6">
+  Curieux, rigoureux et toujours motivé par l’apprentissage, je cherche aujourd’hui à rejoindre une équipe dynamique où je pourrai contribuer à des projets innovants, tout en continuant à progresser sur le plan technique et humain. Mon objectif : évoluer dans un environnement stimulant où je pourrai mettre mes compétences au service d’une vision collective.
+</p>
+
 
           {/* Bouton de téléchargement */}
           <div className="mt-8 text-center md:text-left">

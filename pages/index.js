@@ -14,6 +14,21 @@ import Recommandations from "../components/Recommandations";
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
 
+  // State theme remonté ici
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "dark";
+  });
+
+  // Sync theme with localStorage & document html class
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowIntro(false);
@@ -36,22 +51,21 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* Toujours rendu, mais caché selon showIntro */}
       <div style={{ display: showIntro ? "none" : "block" }}>
-        {/* Particules visibles uniquement sur Hero */}
         <ParticlesBackground />
-        <Navbar />
+        {/* Passer theme & setTheme à Navbar */}
+        <Navbar theme={theme} setTheme={setTheme} />
         <main>
           <Hero />
           <Apropos />
         </main>
 
-        {/* Sections sans fond de particules */}
         <div className="relative z-10">
-          <Competences />
-          <Recommandations />
-          <SectionProjets />
-          <ContactezMoi />
+          {/* Passer theme en props aux sections */}
+          <Competences theme={theme} />
+          <Recommandations theme={theme} />
+          <SectionProjets theme={theme} />
+          <ContactezMoi theme={theme} />
         </div>
       </div>
     </>

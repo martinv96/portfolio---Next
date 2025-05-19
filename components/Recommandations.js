@@ -23,7 +23,7 @@ const recommandations = [
   },
 ];
 
-export default function Recommandations() {
+export default function Recommandations({ theme }) {
   const [modalId, setModalId] = useState(null);
 
   const closeModal = useCallback(() => setModalId(null), []);
@@ -39,10 +39,25 @@ export default function Recommandations() {
 
   const currentRec = recommandations.find((rec) => rec.id === modalId) || null;
 
+  // Classes dynamiques selon thème
+  const sectionBg = theme === "light" ? "bg-white" : "bg-gray-900";
+  const sectionText = theme === "light" ? "text-gray-900" : "text-gray-100";
+  const sectionBorder = theme === "light" ? "border-gray-300" : "border-gray-700";
+  const cardBg = theme === "light" ? "bg-gray-50" : "bg-gray-800";
+  const cardBorder = theme === "light" ? "border-gray-200" : "border-gray-700";
+  const cardTextTitle = theme === "light" ? "text-gray-800" : "text-gray-200";
+  const cardTextExcerpt = theme === "light" ? "text-gray-700" : "text-gray-300";
+  const buttonBg = "bg-blue-600 hover:bg-blue-700";
+  const buttonText = "text-white";
+  const modalBg = theme === "light" ? "bg-white" : "bg-gray-800";
+  const modalText = theme === "light" ? "text-gray-900" : "text-gray-100";
+  const modalBorder = theme === "light" ? "border-gray-200" : "border-gray-700";
+  const closeBtnText = theme === "light" ? "text-gray-600 hover:text-gray-900" : "text-gray-400 hover:text-white";
+
   return (
     <section
       id="recommendations"
-      className="w-full py-24 px-6 bg-white text-gray-900 border-t border-gray-300"
+      className={`w-full py-24 px-6 ${sectionBg} ${sectionText} border-t ${sectionBorder}`}
     >
       <motion.div
         className="max-w-5xl mx-auto"
@@ -51,10 +66,8 @@ export default function Recommandations() {
         viewport={{ once: true }}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        <h2 className="text-4xl font-bold text-center mb-10">
-          Recommandations
-        </h2>
-        <p className="max-w-2xl mx-auto text-center text-gray-600 mb-16 text-lg leading-relaxed">
+        <h2 className="text-4xl font-bold text-center mb-10">Recommandations</h2>
+        <p className="max-w-2xl mx-auto text-center text-lg leading-relaxed mb-16">
           Découvrez les lettres de recommandation reçues de mes anciens employeurs et partenaires.
         </p>
 
@@ -62,14 +75,14 @@ export default function Recommandations() {
           {recommandations.map(({ id, title, excerpt }) => (
             <motion.div
               key={id}
-              className="border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md cursor-pointer flex flex-col justify-between bg-gray-50 transition-shadow duration-300"
+              className={`border ${cardBorder} rounded-xl p-8 shadow-sm hover:shadow-md cursor-pointer flex flex-col justify-between ${cardBg} transition-shadow duration-300`}
               onClick={() => setModalId(id)}
               whileHover={{ scale: 1.04 }}
             >
-              <h3 className="text-2xl font-semibold mb-5 text-gray-800">{title}</h3>
-              <p className="text-gray-700 mb-8 flex-grow leading-relaxed">{excerpt}</p>
+              <h3 className={`text-2xl font-semibold mb-5 ${cardTextTitle}`}>{title}</h3>
+              <p className={`mb-8 flex-grow leading-relaxed ${cardTextExcerpt}`}>{excerpt}</p>
               <button
-                className="self-start bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+                className={`${buttonBg} ${buttonText} font-semibold px-6 py-3 rounded-lg transition self-start`}
                 onClick={(e) => {
                   e.stopPropagation();
                   setModalId(id);
@@ -94,27 +107,24 @@ export default function Recommandations() {
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="bg-white max-w-full md:max-w-4xl w-full max-h-[90vh] rounded-2xl p-6 relative flex flex-col overflow-hidden shadow-xl"
+              className={`max-w-full md:max-w-4xl w-full max-h-[90vh] rounded-2xl p-6 relative flex flex-col overflow-hidden shadow-xl ${modalBg} ${modalText} border ${modalBorder}`}
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
               <button
-                className="absolute top-4 right-5 text-3xl font-bold text-gray-600 hover:text-gray-900 transition z-20"
+                className={`absolute top-4 right-5 text-3xl font-bold ${closeBtnText} transition z-20`}
                 onClick={closeModal}
                 aria-label="Fermer la modale"
               >
                 &times;
               </button>
-              <h2 className="text-3xl font-bold mb-5 text-gray-900">{currentRec.title}</h2>
+              <h2 className="text-3xl font-bold mb-5">{currentRec.title}</h2>
 
-              <div className="flex-grow overflow-auto border border-gray-200 rounded-lg shadow-inner">
+              <div className="flex-grow overflow-auto rounded-lg shadow-inner border border-gray-200">
                 <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
-                  <Viewer
-                    fileUrl={currentRec.pdfUrl}
-                    defaultScale={1}
-                  />
+                  <Viewer fileUrl={currentRec.pdfUrl} defaultScale={1} />
                 </Worker>
               </div>
 
@@ -122,7 +132,7 @@ export default function Recommandations() {
                 <a
                   href={currentRec.pdfUrl}
                   download
-                  className="bg-blue-600 text-white font-semibold px-7 py-3 rounded-lg hover:bg-blue-700 transition shadow-md"
+                  className={`${buttonBg} ${buttonText} font-semibold px-7 py-3 rounded-lg transition shadow-md`}
                   style={{ boxSizing: "border-box" }}
                 >
                   Télécharger la lettre
