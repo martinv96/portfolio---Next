@@ -1,46 +1,50 @@
 import { motion } from "framer-motion";
 
 function AnimatedText({ text }) {
-  const letters = Array.from(text);
+  const words = text.split(" ");
 
   const container = {
     hidden: { opacity: 1 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.04 },
+      transition: {
+        staggerChildren: 0.08,
+      },
     },
   };
 
   const child = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
+      y: 0,
       transition: {
-        duration: 0.15,
+        duration: 0.3,
         ease: "easeOut",
       },
     },
   };
 
   return (
-    <motion.span
-      style={{ display: "inline-block" }}
+    <motion.div
+      className="inline-block text-wrap break-words"
       variants={container}
       initial="hidden"
       animate="visible"
     >
-      {letters.map((char, index) => (
+      {words.map((word, index) => (
         <motion.span
           key={index}
           variants={child}
-          style={{ display: "inline-block" }}
+          className="inline-block mr-1"
         >
-          {char === " " ? "\u00A0" : char}
+          {word}
         </motion.span>
       ))}
-    </motion.span>
+    </motion.div>
   );
 }
+
 
 export default function Hero() {
   return (
