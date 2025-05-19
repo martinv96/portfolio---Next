@@ -74,6 +74,7 @@
     "path-key": "^3.1.1",
     "path-parse": "^1.0.7",
     "path-scurry": "^1.11.1",
+    "pdfjs-dist": "^3.11.174",
     "picocolors": "^1.1.1",
     "picomatch": "^2.3.1",
     "pify": "^2.3.0",

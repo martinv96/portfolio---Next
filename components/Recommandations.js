@@ -1,6 +1,11 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Import du viewer PDF
+import { Worker, Viewer } from "@react-pdf-viewer/core";
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
+
 const recommandations = [
   {
     id: "behindgame",
@@ -105,12 +110,12 @@ export default function Recommandations() {
               <h2 className="text-3xl font-bold mb-5 text-gray-900">{currentRec.title}</h2>
 
               <div className="flex-grow overflow-auto border border-gray-200 rounded-lg shadow-inner">
-                <iframe
-                  src={currentRec.pdfUrl}
-                  title={currentRec.title}
-                  className="w-full h-full min-h-[60vh]"
-                  style={{ border: "none" }}
-                />
+                <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+                  <Viewer
+                    fileUrl={currentRec.pdfUrl}
+                    defaultScale={1}
+                  />
+                </Worker>
               </div>
 
               <div className="mt-6 flex justify-end">
