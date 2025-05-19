@@ -11,7 +11,6 @@ import Competences from "../components/Competences";
 import ContactezMoi from "../components/ContactezMoi";
 import Recommandations from "../components/Recommandations";
 
-
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
 
@@ -37,27 +36,24 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {!showIntro && (
-        <>
-          {/* Particules visibles uniquement sur Hero */}
-          <div>
-            <ParticlesBackground />
-            <Navbar />
-            <main>
-              <Hero />
-            <Apropos />
-            </main>
-          </div>
+      {/* Toujours rendu, mais caché selon showIntro */}
+      <div style={{ display: showIntro ? "none" : "block" }}>
+        {/* Particules visibles uniquement sur Hero */}
+        <ParticlesBackground />
+        <Navbar />
+        <main>
+          <Hero />
+          <Apropos />
+        </main>
 
-          {/* Sections sans fond de particules */}
-          <div className="relative z-10">
-            <Competences />
-            <Recommandations />
-            <SectionProjets />
-            <ContactezMoi />
-          </div>
-        </>
-      )}
+        {/* Sections sans fond de particules */}
+        <div className="relative z-10">
+          <Competences />
+          <Recommandations />
+          <SectionProjets />
+          <ContactezMoi />
+        </div>
+      </div>
     </>
   );
 }

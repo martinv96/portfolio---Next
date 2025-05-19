@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const recommandations = [
@@ -21,13 +21,18 @@ const recommandations = [
 export default function Recommandations() {
   const [modalId, setModalId] = useState(null);
 
-  const closeModal = () => setModalId(null);
+  const closeModal = useCallback(() => setModalId(null), []);
 
-  const handleBackdropClick = (e) => {
-    if (e.target.id === "modal-backdrop") closeModal();
-  };
+  const handleBackdropClick = useCallback(
+    (e) => {
+      if (e.target.id === "modal-backdrop") {
+        closeModal();
+      }
+    },
+    [closeModal]
+  );
 
-  const currentRec = recommandations.find((rec) => rec.id === modalId);
+  const currentRec = recommandations.find((rec) => rec.id === modalId) || null;
 
   return (
     <section
@@ -105,7 +110,7 @@ export default function Recommandations() {
                   title={currentRec.title}
                   className="w-full h-full min-h-[60vh]"
                   style={{ border: "none" }}
-                ></iframe>
+                />
               </div>
 
               <div className="mt-6 flex justify-end">
