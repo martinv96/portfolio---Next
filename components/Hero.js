@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
 
+// Animation lettre par lettre, mots séparés
 function AnimatedText({ text }) {
-  const words = text.split(" ");
+  const words = text.split(" ").map((word) => word.split(""));
 
   const container = {
     hidden: { opacity: 1 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08,
+        staggerChildren: 0.03,
       },
     },
   };
@@ -19,32 +20,35 @@ function AnimatedText({ text }) {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.3,
+        duration: 0.2,
         ease: "easeOut",
       },
     },
   };
 
   return (
-    <motion.div
-      className="inline-block text-wrap break-words"
+    <motion.span
+      className="inline-block leading-tight break-words"
       variants={container}
       initial="hidden"
       animate="visible"
     >
-      {words.map((word, index) => (
-        <motion.span
-          key={index}
-          variants={child}
-          className="inline-block mr-1"
-        >
-          {word}
-        </motion.span>
+      {words.map((letters, wordIndex) => (
+        <span key={wordIndex} className="inline-block mr-1">
+          {letters.map((char, letterIndex) => (
+            <motion.span
+              key={letterIndex}
+              variants={child}
+              className="inline-block"
+            >
+              {char}
+            </motion.span>
+          ))}
+        </span>
       ))}
-    </motion.div>
+    </motion.span>
   );
 }
-
 
 export default function Hero() {
   return (
