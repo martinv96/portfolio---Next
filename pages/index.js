@@ -14,27 +14,41 @@ import Recommandations from "../components/Recommandations";
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
 
-  // State theme remonté ici
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "dark";
-  });
+  // Défaut : dark, puis on check client-side
+  const [theme, setTheme] = useState("dark");
+  const [hasMounted, setHasMounted] = useState(false); // évite hydration mismatch
 
-  // Sync theme with localStorage & document html class
+  // Lecture du thème après le montage
   useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+    setHasMounted(true);
+  }, []);
+
+  // Synchronisation HTML + localStorage
+  useEffect(() => {
+    if (!hasMounted) return; // évite les erreurs au build
+
     localStorage.setItem("theme", theme);
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-  }, [theme]);
+  }, [theme, hasMounted]);
 
+  // Timer pour l’intro
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowIntro(false);
     }, 6500);
     return () => clearTimeout(timer);
   }, []);
+
+  // Empêche le rendu avant montage pour éviter les bugs SSR
+  if (!hasMounted) return null;
 
   return (
     <>
@@ -53,15 +67,12 @@ export default function Home() {
 
       <div style={{ display: showIntro ? "none" : "block" }}>
         <ParticlesBackground />
-        {/* Passer theme & setTheme à Navbar */}
         <Navbar theme={theme} setTheme={setTheme} />
         <main>
           <Hero />
           <Apropos />
         </main>
-
         <div className="relative z-10">
-          {/* Passer theme en props aux sections */}
           <Competences theme={theme} />
           <Recommandations theme={theme} />
           <SectionProjets theme={theme} />
