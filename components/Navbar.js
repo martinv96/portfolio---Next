@@ -30,11 +30,7 @@ export default function Navbar() {
 
   useEffect(() => {
     if (menuRef.current) {
-      if (menuOpen) {
-        setMaxHeight(menuRef.current.scrollHeight + "px");
-      } else {
-        setMaxHeight("0px");
-      }
+      setMaxHeight(menuOpen ? `${menuRef.current.scrollHeight}px` : "0px");
     }
   }, [menuOpen]);
 
@@ -46,9 +42,11 @@ export default function Navbar() {
     }
   };
 
-  const mobileMenuBgClass = !scrolled
-    ? "bg-transparent text-white"
-    : "bg-white text-black";
+  const mobileMenuBgClass =
+  isMobile
+    ? (scrolled ? "bg-white text-black" : "bg-[rgb(33,37,41)] text-white")
+    : (scrolled ? "bg-white text-black" : "bg-transparent text-white");
+
 
   return (
     <nav
@@ -110,36 +108,23 @@ export default function Navbar() {
             : {}
         }
       >
-        <li className="border-b border-gray-300 md:border-0">
-          <button onClick={() => scrollToSection("#hero")} className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center">
-            Accueil
-          </button>
-        </li>
-        <li className="border-b border-gray-300 md:border-0">
-          <button onClick={() => scrollToSection("#about")} className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center">
-            À propos
-          </button>
-        </li>
-        <li className="border-b border-gray-300 md:border-0">
-          <button onClick={() => scrollToSection("#skills")} className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center">
-            Compétences
-          </button>
-        </li>
-        <li className="border-b border-gray-300 md:border-0">
-          <button onClick={() => scrollToSection("#recommendations")} className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center">
-            Recommandations
-          </button>
-        </li>
-        <li className="border-b border-gray-300 md:border-0">
-          <button onClick={() => scrollToSection("#projects")} className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center">
-            Projets
-          </button>
-        </li>
-        <li className="border-b border-gray-300 md:border-0">
-          <button onClick={() => scrollToSection("#contact")} className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center">
-            Contact
-          </button>
-        </li>
+        {[
+          ["#hero", "Accueil"],
+          ["#about", "À propos"],
+          ["#skills", "Compétences"],
+          ["#recommendations", "Recommandations"],
+          ["#projects", "Projets"],
+          ["#contact", "Contact"],
+        ].map(([id, label]) => (
+          <li key={id} className="border-b border-gray-300 md:border-0">
+            <button
+              onClick={() => scrollToSection(id)}
+              className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center"
+            >
+              {label}
+            </button>
+          </li>
+        ))}
       </ul>
     </nav>
   );

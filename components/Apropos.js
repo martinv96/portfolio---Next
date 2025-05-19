@@ -4,7 +4,7 @@ export default function Apropos() {
   return (
     <section
       className="w-full py-20 px-4 text-white"
-      style={{ backgroundColor: "rgba(240, 50, 50, 0.85)" }} // rouge translucide
+      style={{ backgroundColor: "rgba(240, 50, 50, 0.85)" }}
       id="about"
     >
       <motion.div
@@ -14,14 +14,14 @@ export default function Apropos() {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        {/* Photo à gauche */}
+        {/* Photo profile */}
         <img
           src="/profile.jpg"
           alt="Photo de Martin"
           className="w-48 h-48 rounded-full object-cover flex-shrink-0 relative z-20"
         />
 
-        {/* Texte à droite */}
+        {/* Texte */}
         <div className="max-w-3xl text-justify">
           <h2 className="text-4xl font-bold mb-8 text-center md:text-left">
             Faisons connaissance

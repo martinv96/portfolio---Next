@@ -64,7 +64,7 @@ const projects = [
   id: "codebyme",
   title: "CodeByMe",
   description: "Plateforme collaborative de partage de code en Python avec Flask.",
-  imgSrc: "/codeByMe.JPG", // adapte le chemin de l'image
+  imgSrc: "/codeByMe.JPG",
   details: (
     <>
       <p>
