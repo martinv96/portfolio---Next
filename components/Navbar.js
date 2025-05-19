@@ -19,11 +19,11 @@ export default function Navbar() {
     function handleResize() {
       setIsMobile(window.innerWidth < 768);
       if (window.innerWidth >= 768) {
-        setMenuOpen(false); // ferme le menu si on passe en desktop
+        setMenuOpen(false);
       }
     }
 
-    handleResize(); // initialise
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -42,7 +42,7 @@ export default function Navbar() {
     const section = document.querySelector(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
-      setMenuOpen(false); // ferme menu mobile au clic
+      setMenuOpen(false);
     }
   };
 
@@ -63,7 +63,6 @@ export default function Navbar() {
         Martin
       </div>
 
-      {/* Bouton burger visible uniquement en mobile */}
       <button
         onClick={() => setMenuOpen(!menuOpen)}
         className="md:hidden focus:outline-none"
@@ -94,7 +93,6 @@ export default function Navbar() {
         </svg>
       </button>
 
-      {/* Menu responsive */}
       <ul
         ref={menuRef}
         className={`md:flex md:flex-row md:space-x-6 md:static absolute top-full left-0 w-full md:w-auto overflow-hidden
@@ -112,43 +110,33 @@ export default function Navbar() {
             : {}
         }
       >
-        <li>
-          <button
-            onClick={() => scrollToSection("#hero")}
-            className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center"
-          >
+        <li className="border-b border-gray-300 md:border-0">
+          <button onClick={() => scrollToSection("#hero")} className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center">
             Accueil
           </button>
         </li>
-        <li>
-          <button
-            onClick={() => scrollToSection("#skills")}
-            className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center"
-          >
-            Compétences
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => scrollToSection("#about")}
-            className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center"
-          >
+        <li className="border-b border-gray-300 md:border-0">
+          <button onClick={() => scrollToSection("#about")} className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center">
             À propos
           </button>
         </li>
-        <li>
-          <button
-            onClick={() => scrollToSection("#projects")}
-            className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center"
-          >
+        <li className="border-b border-gray-300 md:border-0">
+          <button onClick={() => scrollToSection("#skills")} className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center">
+            Compétences
+          </button>
+        </li>
+        <li className="border-b border-gray-300 md:border-0">
+          <button onClick={() => scrollToSection("#recommendations")} className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center">
+            Recommandations
+          </button>
+        </li>
+        <li className="border-b border-gray-300 md:border-0">
+          <button onClick={() => scrollToSection("#projects")} className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center">
             Projets
           </button>
         </li>
-        <li>
-          <button
-            onClick={() => scrollToSection("#contact")}
-            className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center"
-          >
+        <li className="border-b border-gray-300 md:border-0">
+          <button onClick={() => scrollToSection("#contact")} className="block px-6 py-3 md:py-0 hover:text-blue-400 transition-colors duration-300 w-full text-left md:text-center">
             Contact
           </button>
         </li>

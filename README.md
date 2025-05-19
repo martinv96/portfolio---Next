@@ -73,33 +73,11 @@ src/
 
 ---
 
-## 📦 Installation locale
-
-```bash
-git clone https://github.com/ton-utilisateur/portfolio.git
-cd portfolio
-npm install
-npm run dev
-```
-
----
-
-## 📤 Déploiement
-
-Tu peux déployer ce projet avec :
-
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
-- [GitHub Pages](https://pages.github.com/) (avec build statique)
-
----
 
 ## 🙋‍♂️ À propos
 
 Je m'appelle **Martin**, développeur web junior récemment diplômé.  
 Ce portfolio est l’aboutissement d’une reconversion professionnelle passionnante, et le point de départ vers de nouvelles opportunités !
-
-📫 Contact : [formulaire intégré dans le portfolio](#contact)
 
 ---
 

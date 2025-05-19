@@ -9,6 +9,8 @@ import Apropos from "../components/Apropos";
 import ParticlesBackground from "../components/ParticlesBackground";
 import Competences from "../components/Competences";
 import ContactezMoi from "../components/ContactezMoi";
+import Recommandations from "../components/Recommandations";
+
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
@@ -50,6 +52,7 @@ export default function Home() {
           {/* Sections sans fond de particules */}
           <div className="relative z-10">
             <Competences />
+            <Recommandations />
             <SectionProjets />
             <ContactezMoi />
           </div>

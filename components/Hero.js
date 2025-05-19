@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 // Animation lettre par lettre, mots séparés
-function AnimatedText({ text }) {
+function AnimatedText({ text, isHeading = false }) {
   const words = text.split(" ").map((word) => word.split(""));
 
   const container = {
@@ -34,7 +34,12 @@ function AnimatedText({ text }) {
       animate="visible"
     >
       {words.map((letters, wordIndex) => (
-        <span key={wordIndex} className="inline-block mr-1">
+        <span
+          key={wordIndex}
+          className={`inline-block ${
+            isHeading ? "mr-2 sm:mr-3 md:mr-4" : "mr-1"
+          }`}
+        >
           {letters.map((char, letterIndex) => (
             <motion.span
               key={letterIndex}
@@ -58,7 +63,7 @@ export default function Hero() {
       style={{ backgroundColor: "#212529" }}
     >
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
-        <AnimatedText text="Bonjour, Mon nom est Martin" />
+        <AnimatedText text="Bienvenue, je suis Martin, développeur web." isHeading />
       </h1>
       <p className="text-base sm:text-lg md:text-xl max-w-xl mb-6 px-2 sm:px-0">
         <AnimatedText text="Développeur web passionné, je crée des expériences digitales modernes." />
