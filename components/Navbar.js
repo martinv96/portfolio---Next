@@ -97,14 +97,11 @@ export default function Navbar({ theme, setTheme }) {
         onClick={toggleTheme}
         aria-label="Toggle theme"
         title="Changer le thème clair/sombre"
-        className={`mr-4 p-2 rounded transition 
-    ${theme === "light"
-            ? "hover:bg-gray-400 hover:text-white"
-            : "hover:bg-white hover:text-black"
-          }`}
+        className="mr-4 p-2 rounded transition"
       >
         {theme === "light" ? "🔆" : "🌙"}
       </button>
+
 
       <button
         onClick={() => setMenuOpen(!menuOpen)}
