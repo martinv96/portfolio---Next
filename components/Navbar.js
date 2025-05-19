@@ -5,6 +5,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const [maxHeight, setMaxHeight] = useState("0px");
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     function handleScroll() {
@@ -12,6 +13,19 @@ export default function Navbar() {
     }
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth < 768);
+      if (window.innerWidth >= 768) {
+        setMenuOpen(false); // ferme le menu si on passe en desktop
+      }
+    }
+
+    handleResize(); // initialise
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -32,7 +46,6 @@ export default function Navbar() {
     }
   };
 
-  // Garde le menu transparent quand pas scrolled, même à la fermeture, pour éviter le flash blanc
   const mobileMenuBgClass = !scrolled
     ? "bg-transparent text-white"
     : "bg-white text-black";
@@ -81,7 +94,7 @@ export default function Navbar() {
         </svg>
       </button>
 
-      {/* Menu mobile animé avec max-height et opacity */}
+      {/* Menu responsive */}
       <ul
         ref={menuRef}
         className={`md:flex md:flex-row md:space-x-6 md:static absolute top-full left-0 w-full md:w-auto overflow-hidden
@@ -89,11 +102,15 @@ export default function Navbar() {
           ${mobileMenuBgClass}
           md:max-h-full md:opacity-100 md:bg-transparent md:text-inherit
         `}
-        style={{
-          maxHeight: maxHeight,
-          opacity: menuOpen ? 1 : 0,
-          pointerEvents: menuOpen ? "auto" : "none",
-        }}
+        style={
+          isMobile
+            ? {
+                maxHeight: maxHeight,
+                opacity: menuOpen ? 1 : 0,
+                pointerEvents: menuOpen ? "auto" : "none",
+              }
+            : {}
+        }
       >
         <li>
           <button
@@ -135,7 +152,6 @@ export default function Navbar() {
             Contact
           </button>
         </li>
-
       </ul>
     </nav>
   );

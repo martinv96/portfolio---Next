@@ -63,7 +63,7 @@ export default function ContactezMoi() {
             name="nom"
             value={formData.nom}
             onChange={handleChange}
-            placeholder="Votre nom"
+            placeholder="Votre nom *"
             required
             className="border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
@@ -73,7 +73,7 @@ export default function ContactezMoi() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="Votre email"
+            placeholder="Votre email *"
             required
             className="border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
@@ -82,7 +82,7 @@ export default function ContactezMoi() {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            placeholder="Votre message"
+            placeholder="Votre message *"
             required
             rows={5}
             className="border border-gray-300 rounded px-4 py-3 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
