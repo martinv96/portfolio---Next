@@ -56,6 +56,13 @@ function AnimatedText({ text, isHeading = false }) {
 }
 
 export default function Hero() {
+  const handleScrollToContact = () => {
+    const contactSection = document.querySelector("#contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section
       id="hero"
@@ -68,12 +75,12 @@ export default function Hero() {
       <p className="text-base sm:text-lg md:text-xl max-w-xl mb-6 px-2 sm:px-0">
         <AnimatedText text="Développeur web passionné, je crée des expériences digitales modernes." />
       </p>
-      <a
-        href="#contact"
+      <button
+        onClick={handleScrollToContact}
         className="bg-blue-600 text-white px-6 py-3 rounded w-full max-w-xs sm:max-w-sm mx-auto hover:bg-blue-700 transition text-center block"
       >
         Contactez-moi
-      </a>
+      </button>
     </section>
   );
 }
