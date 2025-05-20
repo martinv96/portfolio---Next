@@ -13,12 +13,9 @@ import Recommandations from "../components/Recommandations";
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
-
-  // Défaut : dark, puis on check client-side
   const [theme, setTheme] = useState("dark");
-  const [hasMounted, setHasMounted] = useState(false); // évite hydration mismatch
+  const [hasMounted, setHasMounted] = useState(false);
 
-  // Lecture du thème après le montage
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
@@ -27,19 +24,12 @@ export default function Home() {
     setHasMounted(true);
   }, []);
 
-  // Synchronisation HTML + localStorage
   useEffect(() => {
-    if (!hasMounted) return; // évite les erreurs au build
-
+    if (!hasMounted) return;
     localStorage.setItem("theme", theme);
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    document.documentElement.classList.toggle("dark", theme === "dark");
   }, [theme, hasMounted]);
 
-  // Timer pour l’intro
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowIntro(false);
@@ -47,7 +37,6 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Empêche le rendu avant montage pour éviter les bugs SSR
   if (!hasMounted) return null;
 
   return (
@@ -60,7 +49,7 @@ export default function Home() {
             exit={{ opacity: 0, transition: { duration: 1 } }}
             className="fixed inset-0 z-50"
           >
-            <Intro />
+            <Intro onFinish={() => setShowIntro(false)} />
           </motion.div>
         )}
       </AnimatePresence>

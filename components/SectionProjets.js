@@ -83,82 +83,82 @@ const projects = [
     ),
   },
   {
-  id: "teona",
-  title: "Teona Passenger",
-  description: "Application de gestion de passagers avec API REST Symfony et React.",
-  imgSrc: "/teona.JPG",
-  details: (
-    <>
-      <p>
-        Teona Passenger est une application de comparaison de prix dans le domaine du tourisme (vols, hébergements, hôtels, etc.). Le projet est développé en React, avec une interface unifiée pour toutes les catégories, une barre de recherche dynamique, et une attention particulière portée à l’expérience utilisateur, à la responsivité et à la performance.
-      </p>
+    id: "teona",
+    title: "Teona Passenger",
+    description: "Application de gestion de passagers avec API REST Symfony et React.",
+    imgSrc: "/teona.JPG",
+    details: (
+      <>
+        <p>
+          Teona Passenger est une application de comparaison de prix dans le domaine du tourisme (vols, hébergements, hôtels, etc.). Le projet est développé en React, avec une interface unifiée pour toutes les catégories, une barre de recherche dynamique, et une attention particulière portée à l’expérience utilisateur, à la responsivité et à la performance.
+        </p>
 
-      <h3 className="mt-6 font-semibold">🧱 Structure du projet</h3>
-      <ul className="list-disc ml-5 space-y-1 text-sm">
-        <li>Framework Front-end : React (Vite)</li>
-        <li>Organisation : components/, pages/, style/</li>
-        <li>Langages : JavaScript, HTML5, CSS (TailwindCSS)</li>
-        <li>Données : API fictive ou à venir</li>
-        <li>Routage : React Router</li>
-      </ul>
+        <h3 className="mt-6 font-semibold">🧱 Structure du projet</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Framework Front-end : React (Vite)</li>
+          <li>Organisation : components/, pages/, style/</li>
+          <li>Langages : JavaScript, HTML5, CSS (TailwindCSS)</li>
+          <li>Données : API fictive ou à venir</li>
+          <li>Routage : React Router</li>
+        </ul>
 
-      <h3 className="mt-6 font-semibold">👤 Fonctionnalités utilisateur</h3>
-      <ul className="list-disc ml-5 space-y-1 text-sm">
-        <li>Navigation fluide entre les pages de catégories</li>
-        <li>Barre de recherche dynamique selon la catégorie</li>
-        <li>Interface cohérente et fluide (SPA)</li>
-        <li>Affichage adapté aux écrans desktop et mobile</li>
-        <li>Prévision d’un système de compte utilisateur</li>
-      </ul>
+        <h3 className="mt-6 font-semibold">👤 Fonctionnalités utilisateur</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Navigation fluide entre les pages de catégories</li>
+          <li>Barre de recherche dynamique selon la catégorie</li>
+          <li>Interface cohérente et fluide (SPA)</li>
+          <li>Affichage adapté aux écrans desktop et mobile</li>
+          <li>Prévision d’un système de compte utilisateur</li>
+        </ul>
 
-      <h3 className="mt-6 font-semibold">🔍 Fonctionnalités de comparaison</h3>
-      <ul className="list-disc ml-5 space-y-1 text-sm">
-        <li>Page d’accueil par défaut : vols</li>
-        <li>Chaque catégorie comprend : page dédiée, barre de recherche spécifique, résultats simulés</li>
-        <li>Filtres et tris avancés prévus (prix, durée, avis)</li>
-      </ul>
+        <h3 className="mt-6 font-semibold">🔍 Fonctionnalités de comparaison</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Page d’accueil par défaut : vols</li>
+          <li>Chaque catégorie comprend : page dédiée, barre de recherche spécifique, résultats simulés</li>
+          <li>Filtres et tris avancés prévus (prix, durée, avis)</li>
+        </ul>
 
-      <h3 className="mt-6 font-semibold">🖼️ Interface utilisateur</h3>
-      <ul className="list-disc ml-5 space-y-1 text-sm">
-        <li>Design moderne avec TailwindCSS</li>
-        <li>Grilles & Flexbox pour une mise en page fluide</li>
-        <li>Composants réutilisables (Header, Footer, etc.)</li>
-        <li>Police : Inter (Google Fonts)</li>
-        <li>Responsive mobile-first</li>
-      </ul>
+        <h3 className="mt-6 font-semibold">🖼️ Interface utilisateur</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Design moderne avec TailwindCSS</li>
+          <li>Grilles & Flexbox pour une mise en page fluide</li>
+          <li>Composants réutilisables (Header, Footer, etc.)</li>
+          <li>Police : Inter (Google Fonts)</li>
+          <li>Responsive mobile-first</li>
+        </ul>
 
-      <h3 className="mt-6 font-semibold">🧪 Tests & sécurité (à venir)</h3>
-      <ul className="list-disc ml-5 space-y-1 text-sm">
-        <li>Tests unitaires prévus (React Testing Library / Jest)</li>
-        <li>Structure pensée pour modularité & testabilité</li>
-        <li>Respect du principe de séparation des responsabilités</li>
-      </ul>
+        <h3 className="mt-6 font-semibold">🧪 Tests & sécurité (à venir)</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Tests unitaires prévus (React Testing Library / Jest)</li>
+          <li>Structure pensée pour modularité & testabilité</li>
+          <li>Respect du principe de séparation des responsabilités</li>
+        </ul>
 
-      <h3 className="mt-6 font-semibold">🌐 SEO & Accessibilité</h3>
-      <ul className="list-disc ml-5 space-y-1 text-sm">
-        <li>HTML sémantique (section, article, etc.)</li>
-        <li>Balises <code>title</code> et <code>meta</code> pour le SEO</li>
-        <li>Accessibilité pensée dès la conception</li>
-      </ul>
+        <h3 className="mt-6 font-semibold">🌐 SEO & Accessibilité</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>HTML sémantique (section, article, etc.)</li>
+          <li>Balises <code>title</code> et <code>meta</code> pour le SEO</li>
+          <li>Accessibilité pensée dès la conception</li>
+        </ul>
 
-      <h3 className="mt-6 font-semibold">🚀 Déploiement</h3>
-      <ul className="list-disc ml-5 space-y-1 text-sm">
-        <li>Développement local avec Vite</li>
-        <li>Déploiement prévu : Netlify, Vercel ou Render</li>
-        <li>Connexion future à un CMS ou base distante</li>
-      </ul>
+        <h3 className="mt-6 font-semibold">🚀 Déploiement</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Développement local avec Vite</li>
+          <li>Déploiement prévu : Netlify, Vercel ou Render</li>
+          <li>Connexion future à un CMS ou base distante</li>
+        </ul>
 
-      <h3 className="mt-6 font-semibold">🛠️ Fonctionnalités à venir</h3>
-      <ul className="list-disc ml-5 space-y-1 text-sm">
-        <li>Connexion à une API REST Symfony sécurisée</li>
-        <li>Authentification utilisateur</li>
-        <li>Commentaires et notes sur les résultats</li>
-        <li>Intégration de paiements pour réservation</li>
-      </ul>
-    </>
-  ),
-}
-,
+        <h3 className="mt-6 font-semibold">🛠️ Fonctionnalités à venir</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Connexion à une API REST Symfony sécurisée</li>
+          <li>Authentification utilisateur</li>
+          <li>Commentaires et notes sur les résultats</li>
+          <li>Intégration de paiements pour réservation</li>
+        </ul>
+      </>
+    ),
+  }
+  ,
   {
     id: "codebyme",
     title: "CodeByMe",
@@ -166,63 +166,67 @@ const projects = [
     imgSrc: "/codeByMe.JPG",
     details: (
       <>
-        <p>
+        <p className="mb-4">
           CodeByMe permet aux développeurs de partager et commenter des extraits de code dans un espace communautaire.
         </p>
-            <h3 className="mt-6 font-semibold">🧱 Structure du projet</h3>
-    <ul className="list-disc ml-5 space-y-1 text-sm">
-      <li>Framework : Flask (Python)</li>
-      <li>Templates : Jinja2</li>
-      <li>Langages : Python, HTML, CSS, JavaScript</li>
-      <li>Organisation : routes.py, templates/, static/</li>
-      <li>Base de données : SQLite (simple)</li>
-    </ul>
 
-    <h3 className="mt-6 font-semibold">👤 Fonctionnalités utilisateur</h3>
-    <ul className="list-disc ml-5 space-y-1 text-sm">
-      <li>Présentation dynamique des compétences</li>
-      <li>Formulaire de contact connecté à une API Next.js</li>
-      <li>Affichage de projets avec détails en modales</li>
-      <li>Thème clair/sombre activable</li>
-    </ul>
+        <p>
+          CodeByMe est un projet disponible ici : <a href="https://codebyme.onrender.com/" target="_blank" rel="noopener noreferrer" className="underline">https://codebyme.onrender.com/</a>
+        </p>
+        <h3 className="mt-6 font-semibold">🧱 Structure du projet</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Framework : Flask (Python)</li>
+          <li>Templates : Jinja2</li>
+          <li>Langages : Python, HTML, CSS, JavaScript</li>
+          <li>Organisation : routes.py, templates/, static/</li>
+          <li>Base de données : SQLite (simple)</li>
+        </ul>
 
-    <h3 className="mt-6 font-semibold">🖼️ Interface utilisateur</h3>
-    <ul className="list-disc ml-5 space-y-1 text-sm">
-      <li>Design simple, moderne et épuré</li>
-      <li>Responsive mobile-first</li>
-      <li>Animations CSS légères</li>
-      <li>Composants React intégrés côté front</li>
-    </ul>
+        <h3 className="mt-6 font-semibold">👤 Fonctionnalités utilisateur</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Présentation dynamique des compétences</li>
+          <li>Formulaire de contact connecté à une API Next.js</li>
+          <li>Affichage de projets avec détails en modales</li>
+          <li>Thème clair/sombre activable</li>
+        </ul>
 
-    <h3 className="mt-6 font-semibold">🧪 Tests & sécurité</h3>
-    <ul className="list-disc ml-5 space-y-1 text-sm">
-      <li>Protection contre injection SQL et XSS</li>
-      <li>Validation des données côté serveur</li>
-      <li>Tests unitaires Python (Pytest)</li>
-    </ul>
+        <h3 className="mt-6 font-semibold">🖼️ Interface utilisateur</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Design simple, moderne et épuré</li>
+          <li>Responsive mobile-first</li>
+          <li>Animations CSS légères</li>
+          <li>Composants React intégrés côté front</li>
+        </ul>
 
-    <h3 className="mt-6 font-semibold">🌐 SEO & Accessibilité</h3>
-    <ul className="list-disc ml-5 space-y-1 text-sm">
-      <li>Balises meta et titles optimisées</li>
-      <li>Navigation accessible au clavier</li>
-      <li>Structure sémantique</li>
-    </ul>
+        <h3 className="mt-6 font-semibold">🧪 Tests & sécurité</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Protection contre injection SQL et XSS</li>
+          <li>Validation des données côté serveur</li>
+          <li>Tests unitaires Python (Pytest)</li>
+        </ul>
 
-    <h3 className="mt-6 font-semibold">🚀 Déploiement</h3>
-    <ul className="list-disc ml-5 space-y-1 text-sm">
-      <li>Hébergement sur Heroku / Render</li>
-      <li>CI/CD basique avec GitHub Actions</li>
-      <li>SSL activé</li>
-    </ul>
+        <h3 className="mt-6 font-semibold">🌐 SEO & Accessibilité</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Balises meta et titles optimisées</li>
+          <li>Navigation accessible au clavier</li>
+          <li>Structure sémantique</li>
+        </ul>
 
-    <h3 className="mt-6 font-semibold">🛠️ Fonctionnalités à venir</h3>
-    <ul className="list-disc ml-5 space-y-1 text-sm">
-      <li>Ajout d’une section blog</li>
-      <li>Optimisations SEO avancées</li>
-      <li>Intégration de nouveaux projets</li>
-    </ul>
-  </>
-),
+        <h3 className="mt-6 font-semibold">🚀 Déploiement</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Hébergement sur Heroku / Render</li>
+          <li>CI/CD basique avec GitHub Actions</li>
+          <li>SSL activé</li>
+        </ul>
+
+        <h3 className="mt-6 font-semibold">🛠️ Fonctionnalités à venir</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Ajout d’une section blog</li>
+          <li>Optimisations SEO avancées</li>
+          <li>Intégration de nouveaux projets</li>
+        </ul>
+      </>
+    ),
 
   },
 ];

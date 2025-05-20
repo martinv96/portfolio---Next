@@ -10,6 +10,8 @@
   "dependencies": {
     "@react-pdf-viewer/core": "^3.12.0",
     "@react-pdf-viewer/default-layout": "^3.12.0",
+    "@react-three/drei": "^10.0.8",
+    "@react-three/fiber": "^9.1.2",
     "@tsparticles/react": "^3.0.0",
     "ansi-regex": "^6.1.0",
     "ansi-styles": "^6.2.1",
@@ -106,6 +108,7 @@
     "supports-preserve-symlinks-flag": "^1.0.0",
     "thenify": "^3.3.1",
     "thenify-all": "^1.6.0",
+    "three": "^0.176.0",
     "to-regex-range": "^5.0.1",
     "ts-interface-checker": "^0.1.13",
     "tsparticles": "^3.8.1",
