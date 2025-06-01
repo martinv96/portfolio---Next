@@ -14,6 +14,16 @@ const projects = [
           EasyDealz est une application e-commerce développée avec Symfony, offrant une structure back-end robuste, une base de données MySQL, une gestion sécurisée des utilisateurs et des produits, et une interface moderne. Le projet est axé sur l’expérience utilisateur, le SEO, la sécurité et la conformité RGPD.
         </p>
 
+        <a
+          href="https://github.com/martinv96/Easydealz"
+          class="text-gray-300 hover:underline hover:text-gray-400 transition duration-200"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Voir le code source
+        </a>
+
+
         <h3 className="mt-6 font-semibold">🧱 Structure du projet</h3>
         <ul className="list-disc ml-5 space-y-1 text-sm">
           <li>Framework : Symfony 7.1.*</li>
@@ -93,6 +103,15 @@ const projects = [
           Teona Passenger est une application de comparaison de prix dans le domaine du tourisme (vols, hébergements, hôtels, etc.). Le projet est développé en React, avec une interface unifiée pour toutes les catégories, une barre de recherche dynamique, et une attention particulière portée à l’expérience utilisateur, à la responsivité et à la performance.
         </p>
 
+        <a
+          href="https://github.com/Behind-Game-Group/TeonaPassenger"
+          class="text-gray-300 hover:underline hover:text-gray-400 transition duration-200"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Voir le code source
+        </a>
+
         <h3 className="mt-6 font-semibold">🧱 Structure du projet</h3>
         <ul className="list-disc ml-5 space-y-1 text-sm">
           <li>Framework Front-end : React (Vite)</li>
@@ -169,6 +188,15 @@ const projects = [
         <p className="mb-4">
           CodeByMe permet aux développeurs de partager et commenter des extraits de code dans un espace communautaire.
         </p>
+
+        <a
+          href="https://github.com/martinv96/ProjetMai2025"
+          class="text-gray-300 hover:underline hover:text-gray-400 transition duration-200"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Voir le code source
+        </a>
 
         <p>
           CodeByMe est un projet disponible ici : <a href="https://codebyme.onrender.com/" target="_blank" rel="noopener noreferrer" className="underline">https://codebyme.onrender.com/</a>

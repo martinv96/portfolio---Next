@@ -43,7 +43,7 @@ export default function Apropos() {
           {/* Bouton de téléchargement */}
           <div className="mt-8 text-center md:text-left">
             <a
-              href="/cv.pdf"
+              href="/CV - Fullstack.pdf"
               download
               className="inline-block bg-white text-red-600 font-semibold px-6 py-3 rounded shadow hover:bg-red-100 transition relative z-20"
             >
