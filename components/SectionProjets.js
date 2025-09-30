@@ -271,7 +271,7 @@ const projects = [
       </p>
 
       <a
-        href="https://github.com/ton-github/spacex-launch-explorer"
+        href="https://github.com/martinv96/spacex"
         class="text-gray-300 hover:underline hover:text-gray-400 transition duration-200"
         target="_blank"
         rel="noopener noreferrer"
@@ -332,6 +332,80 @@ const projects = [
   ),
 },
 {
+  id: "cookmaster",
+  title: "🍳 CookMaster",
+  description: "Site de recettes interactif développé en Next.js avec moteur de recherche, quiz chronométré et newsletter.",
+  imgSrc: "/cookmaster.JPG",
+  details: (
+    <>
+      <p>
+        CookMaster est une application web développée avec Next.js, React et Tailwind CSS. 
+        Elle permet de consulter des recettes de cuisine détaillées avec images et étapes, de participer à un quiz chronométré, 
+        de s’inscrire à une newsletter et de contacter l’équipe via une page dédiée. L’interface est moderne, responsive et fluide.
+      </p>
+
+      <a
+        href="https://github.com/martinv96/projetaout"
+        class="text-gray-300 hover:underline hover:text-gray-400 transition duration-200"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Voir le code source
+      </a>
+
+      <a
+        href="https://projetaout.vercel.app/"
+        class="ml-4 text-gray-300 hover:underline hover:text-gray-400 transition duration-200"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Voir la démo en ligne
+      </a>
+
+      <h3 className="mt-6 font-semibold">🧱 Structure du projet</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Framework : Next.js 15 + React 19</li>
+        <li>Langages : TypeScript, JavaScript, HTML, CSS avec Tailwind</li>
+        <li>API backend pour gestion de la newsletter avec Express.js et Nodemailer</li>
+        <li>Pages principales : Recettes, Quiz, Contact</li>
+        <li>Gestion des états réactifs avec React hooks</li>
+      </ul>
+
+      <h3 className="mt-6 font-semibold">👤 Fonctionnalités utilisateur</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Consultation des recettes avec images et étapes détaillées</li>
+        <li>Moteur de recherche pour filtrer les recettes</li>
+        <li>Quiz culinaire chronométré</li>
+        <li>Inscription à une newsletter</li>
+        <li>Page de contact avec formulaire</li>
+      </ul>
+
+      <h3 className="mt-6 font-semibold">🖼️ Interface utilisateur</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Design moderne et épuré</li>
+        <li>Responsive (desktop & mobile)</li>
+        <li>Animations subtiles avec Framer Motion pour améliorer l’expérience utilisateur</li>
+      </ul>
+
+      <h3 className="mt-6 font-semibold">🧪 Difficultés rencontrées</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Intégration de l’API newsletter dans Next.js</li>
+        <li>Gestion des envois d’emails avec Nodemailer</li>
+        <li>Création du quiz chronométré avec suivi du temps et des scores</li>
+        <li>Optimisation des performances pour le rendu rapide des pages recettes</li>
+      </ul>
+
+      <h3 className="mt-6 font-semibold">🛠️ Fonctionnalités à venir</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Ajout d’un système de notation et commentaires pour les recettes</li>
+        <li>Favoris pour enregistrer ses recettes préférées</li>
+        <li>Authentification utilisateurs pour gestion personnalisée</li>
+        <li>Amélioration de l’accessibilité et optimisation SEO</li>
+      </ul>
+    </>
+  ),
+},
+{
   id: "eventify-api",
   title: "🎫 Eventify API",
   description: "API RESTful Laravel pour la gestion complète d'événements, utilisateurs et réservations.",
@@ -345,7 +419,7 @@ const projects = [
       </p>
 
       <a
-        href="https://github.com/ton-github/eventify-api"
+        href="https://github.com/martinv96/laravel"
         class="text-gray-300 hover:underline hover:text-gray-400 transition duration-200"
         target="_blank"
         rel="noopener noreferrer"
