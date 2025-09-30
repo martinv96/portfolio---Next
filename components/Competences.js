@@ -16,59 +16,60 @@ const skills = [
   {
     icon: <FaCode className="text-3xl text-red-500" />,
     title: "Langages",
-    text: "Maîtrise de PHP 8, JavaScript (ES6), Python. Solides bases en HTML5, CSS3 et SQL.",
+    text: "Maîtrise de PHP 8, JavaScript/TypeScript (ES6+), Python. Solides bases en HTML5, CSS3 et SQL. POO appliquée sur tous les projets.",
   },
   {
     icon: <FaProjectDiagram className="text-3xl text-red-500" />,
     title: "Frameworks & Librairies",
-    text: "Expérience confirmée avec Symfony 5/6, React, Next.js. Bonne connaissance de Salesforce, Flask, Bootstrap, TailwindCSS.",
+    text: "Expérience confirmée avec Symfony 5/6, React, Vue.js, Next.js et Angular. Bonne connaissance de Flask, Bootstrap et TailwindCSS.",
   },
   {
     icon: <FaDatabase className="text-3xl text-red-500" />,
     title: "Bases de données & ORM",
-    text: "Très bonne maîtrise de MySQL et de l'ORM Doctrine.",
+    text: "Très bonne maîtrise de MySQL et Doctrine ORM. Expérience avec SQLite pour tests automatisés.",
   },
   {
     icon: <FaTools className="text-3xl text-red-500" />,
     title: "Environnement & Outils",
-    text: "Utilisation quotidienne de Git, GitHub, VS Code, Postman. Expérience en environnement collaboratif.",
+    text: "Utilisation quotidienne de Git, GitHub, VS Code, Postman, npm/yarn, Composer. Travail en environnement collaboratif Agile (Gitflow, CI/CD).",
   },
   {
     icon: <FaCogs className="text-3xl text-red-500" />,
     title: "Architectures & Bonnes pratiques",
-    text: "Approche structurée MVC, conception d’API REST, intégration responsive design multi-supports.",
+    text: "Approche structurée MVC, conception d’API RESTful, intégration responsive design et mobile-first, respect des normes PSR et bonnes pratiques de sécurité.",
   },
   {
     icon: <FaUsersCog className="text-3xl text-red-500" />,
     title: "Méthodologies & Soft Skills",
-    text: "Travail en méthode Agile (Scrum), autonomie, bonne communication, vulgarisation des sujets techniques.",
+    text: "Travail en équipe, communication, autonomie, curiosité, sens de l’analyse et rigueur organisationnelle, grande adaptabilité et ouverture d’esprit, esprit orienté solution.",
   },
   {
     icon: <FaClipboardCheck className="text-3xl text-red-500" />,
     title: "Déploiement & CI/CD",
-    text: "Utilisation de Vercel, Netlify, GitHub Actions. Connaissance de Docker.",
+    text: "Déploiement sur Vercel et Netlify. Utilisation de GitHub Actions pour CI/CD. Connaissance de Docker pour l’environnement de développement.",
   },
   {
     icon: <FaShieldAlt className="text-3xl text-red-500" />,
     title: "Sécurité Web",
-    text: "Bonnes pratiques OWASP : CSRF, XSS, validation des données, gestion des rôles.",
+    text: "Respect des bonnes pratiques OWASP : protection CSRF, XSS, validation des données, gestion des rôles et permissions.",
   },
   {
     icon: <FaBug className="text-3xl text-red-500" />,
     title: "Tests & Qualité",
-    text: "Tests avec PHPUnit, React Testing Library. Outils : ESLint, Prettier, SonarLint.",
+    text: "Tests unitaires et fonctionnels avec PHPUnit et React Testing Library. Utilisation d’outils de qualité : ESLint, Prettier, SonarLint.",
   },
   {
     icon: <FaServer className="text-3xl text-red-500" />,
     title: "APIs & Intégrations",
-    text: "Conception et intégration d’APIs REST/GraphQL, services tiers comme Stripe, Gmail.",
+    text: "Conception et intégration d’APIs REST/GraphQL. Intégration de services tiers tels que Stripe et Gmail.",
   },
   {
     icon: <FaCogs className="text-3xl text-red-500" />,
     title: "Back-office & CMS",
-    text: "Interfaces d’administration avec EasyAdmin. Expérience WordPress pour la gestion de contenu.",
+    text: "Création et gestion d’interfaces d’administration avec EasyAdmin. Expérience WordPress pour la gestion de contenu.",
   },
 ];
+
 
 export default function Competences({ theme }) {
   // Classes dynamiques selon thème

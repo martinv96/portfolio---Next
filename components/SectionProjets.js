@@ -257,6 +257,218 @@ const projects = [
     ),
 
   },
+  {
+  id: "spacex-launch-explorer",
+  title: "🚀 SpaceX Launch Explorer",
+  description: "Application Vue 3 affichant les lancements de SpaceX avec filtres, modale détaillée et intégration vidéo YouTube.",
+  imgSrc: "/spacex-launch-explorer.JPG",
+  details: (
+    <>
+      <p>
+        SpaceX Launch Explorer est une application front dynamique développée avec Vue 3, TypeScript et Tailwind CSS. 
+        Elle consomme l’API publique SpaceX v5 et permet de consulter les prochains lancements, d’explorer les derniers vols 
+        et d’accéder à des informations détaillées via une interface moderne et responsive.
+      </p>
+
+      <a
+        href="https://github.com/ton-github/spacex-launch-explorer"
+        class="text-gray-300 hover:underline hover:text-gray-400 transition duration-200"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Voir le code source
+      </a>
+
+      <a
+        href="https://spacex-u5ch.vercel.app/"
+        class="ml-4 text-gray-300 hover:underline hover:text-gray-400 transition duration-200"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Voir la démo en ligne
+      </a>
+
+      <h3 className="mt-6 font-semibold">🧱 Structure du projet</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Framework : Vue 3 (Composition API)</li>
+        <li>Langages : TypeScript, HTML, Tailwind CSS</li>
+        <li>Composables pour la gestion des appels API</li>
+        <li>Gestion des états réactifs avec <code>ref</code> et <code>computed</code></li>
+      </ul>
+
+      <h3 className="mt-6 font-semibold">👤 Fonctionnalités utilisateur</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Affichage du prochain lancement</li>
+        <li>Liste paginée des 10 derniers lancements</li>
+        <li>Filtrage par succès / échec</li>
+        <li>Détails complets d’un lancement dans une modale</li>
+        <li>Intégration vidéo YouTube si disponible</li>
+        <li>Données supplémentaires (lieu de lancement, payloads, clients)</li>
+      </ul>
+
+      <h3 className="mt-6 font-semibold">🖼️ Interface utilisateur</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Responsive (desktop & mobile)</li>
+        <li>Design simple et épuré avec Tailwind CSS</li>
+        <li>Gestion des cas où certaines données sont absentes (vidéo, description, etc.)</li>
+      </ul>
+
+      <h3 className="mt-6 font-semibold">🧪 Difficultés rencontrées</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Absence fréquente de la description <code>details</code> dans l’API</li>
+        <li>Pas de champ <code>youtube_id</code> : extraction manuelle depuis <code>links.webcast</code></li>
+        <li>Multiples requêtes nécessaires pour obtenir launchpad et payloads</li>
+        <li>Gestion d’erreurs silencieuses pour données nulles ou incomplètes</li>
+      </ul>
+
+      <h3 className="mt-6 font-semibold">🛠️ Fonctionnalités à venir</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Recherche avancée (par nom de mission, date, etc.)</li>
+        <li>Tri personnalisé (par date, statut, payloads)</li>
+        <li>Historique complet avec pagination étendue</li>
+        <li>Mode sombre / clair</li>
+      </ul>
+    </>
+  ),
+},
+{
+  id: "eventify-api",
+  title: "🎫 Eventify API",
+  description: "API RESTful Laravel pour la gestion complète d'événements, utilisateurs et réservations.",
+  imgSrc: "/eventify-api.JPG", // image type diagramme ou Postman screenshot
+  details: (
+    <>
+      <p>
+        Eventify API est un backend Laravel 10 conçu pour alimenter une plateforme web et mobile de gestion d’événements. 
+        Elle fournit des endpoints sécurisés pour gérer les utilisateurs, événements, catégories et réservations, avec 
+        authentification via tokens API et validation complète des données.
+      </p>
+
+      <a
+        href="https://github.com/ton-github/eventify-api"
+        class="text-gray-300 hover:underline hover:text-gray-400 transition duration-200"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Voir le code source
+      </a>
+
+      <h3 className="mt-6 font-semibold">🧱 Structure du projet</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Framework : Laravel 10</li>
+        <li>Langages : PHP, MySQL, SQLite pour tests</li>
+        <li>Authentification : Sanctum API tokens</li>
+        <li>Architecture MVC avec contrôleurs, modèles et migrations</li>
+        <li>Tests unitaires et fonctionnels avec PHPUnit</li>
+      </ul>
+
+      <h3 className="mt-6 font-semibold">👤 Fonctionnalités utilisateur</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Inscription et connexion sécurisées</li>
+        <li>Gestion des profils utilisateurs</li>
+        <li>CRUD complet sur les événements et catégories</li>
+        <li>Filtrage, recherche et pagination des événements</li>
+        <li>Réservation de places pour les événements</li>
+        <li>Visualisation et gestion des réservations pour utilisateurs et administrateurs</li>
+      </ul>
+
+      <h3 className="mt-6 font-semibold">🖼️ Illustration / UI</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Pas d’interface frontend intégrée</li>
+        <li>Représentation possible via diagramme des endpoints ou capture Postman</li>
+        <li>JSON structuré et clair pour chaque endpoint</li>
+      </ul>
+
+      <h3 className="mt-6 font-semibold">🧪 Difficultés rencontrées</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Gestion de l’authentification API dans les tests (erreurs 401)</li>
+        <li>Relations complexes : réservation ↔ utilisateur ↔ événement</li>
+        <li>Filtrage et pagination efficaces avec Eloquent</li>
+        <li>Validation et gestion des erreurs cohérentes pour tous les endpoints</li>
+      </ul>
+
+      <h3 className="mt-6 font-semibold">🛠️ Fonctionnalités à venir</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Endpoints supplémentaires pour analytics / statistiques</li>
+        <li>Notification par email pour réservations</li>
+        <li>Extension pour gérer plusieurs types d’événements ou sessions</li>
+        <li>Documentation interactive Swagger / Postman</li>
+      </ul>
+    </>
+  ),
+},
+
+  {
+  id: "angular-tasks",
+  title: "Angular Tasks Manager",
+  description: "Application de gestion de tâches et calendrier développée avec Angular 20.",
+  imgSrc: "/angular-tasks.JPG",
+  details: (
+    <>
+      <p>
+        Angular Tasks Manager est une application de gestion quotidienne développée avec Angular 20. 
+        Elle permet d’ajouter, modifier et supprimer des tâches, de gérer leur statut, et d’utiliser un calendrier interactif. 
+        Le projet inclut un système de thème clair/sombre et une interface responsive moderne.
+      </p>
+
+      <a
+        href="https://github.com/martinv96/projetAngular"
+        class="text-gray-300 hover:underline hover:text-gray-400 transition duration-200"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Voir le code source
+      </a>
+
+      <h3 className="mt-6 font-semibold">🧱 Structure du projet</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Framework : Angular 20</li>
+        <li>Langages : TypeScript, HTML, CSS (Bootstrap 5 + personnalisations)</li>
+        <li>Services : gestion des tâches et gestion du thème (dark/light)</li>
+        <li>Architecture modulaire avec composants standalone</li>
+      </ul>
+
+      <h3 className="mt-6 font-semibold">👤 Fonctionnalités utilisateur</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Ajouter, modifier et supprimer des tâches</li>
+        <li>Changement du statut des tâches (En cours, Terminée, Urgente)</li>
+        <li>Calendrier interactif (navigation par mois/année, sélection de jour)</li>
+        <li>Thème clair / sombre activable par bouton</li>
+        <li>Pages dédiées : Accueil, Profil, Contact, À propos</li>
+      </ul>
+
+      <h3 className="mt-6 font-semibold">🖼️ Interface utilisateur</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Responsive (desktop & mobile)</li>
+        <li>Design moderne avec Bootstrap 5 et CSS personnalisé</li>
+        <li>Utilisation de Google Fonts (Poppins)</li>
+        <li>Composants réutilisables (cartes, boutons, formulaires)</li>
+      </ul>
+
+      <h3 className="mt-6 font-semibold">🧪 Tests & qualité</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Tests unitaires prévus avec Jasmine/Karma</li>
+        <li>Respect des bonnes pratiques Angular (services injectables, modularité)</li>
+      </ul>
+
+      <h3 className="mt-6 font-semibold">🌐 SEO & Accessibilité</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Structuration sémantique du HTML</li>
+        <li>Contrastes adaptés pour le mode sombre</li>
+        <li>Préparation à l’optimisation SEO avec balises <code>title</code> et <code>meta</code></li>
+      </ul>
+
+      <h3 className="mt-6 font-semibold">🛠️ Fonctionnalités à venir</h3>
+      <ul className="list-disc ml-5 space-y-1 text-sm">
+        <li>Connexion / inscription utilisateurs</li>
+        <li>Persistance des tâches via API ou base de données</li>
+        <li>Amélioration du calendrier (événements, rappels, couleurs personnalisées)</li>
+        <li>Notifications pour les tâches urgentes</li>
+      </ul>
+    </>
+  ),
+},
+
 ];
 
 export default function SectionProjets({ theme }) {

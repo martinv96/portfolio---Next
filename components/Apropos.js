@@ -28,16 +28,17 @@ export default function Apropos() {
           </h2>
 
           <p className="text-lg mb-6">
-  Je m'appelle Martin, développeur web passionné de 28 ans. Après une reconversion professionnelle réfléchie, j’ai entrepris une formation intensive au développement web et web mobile, avec pour objectif de donner un nouveau sens à ma carrière à travers la création d’outils numériques utiles et modernes.
-</p>
+            Je m'appelle Martin Vallée, développeur web passionné basé en Île-de-France. Après une reconversion professionnelle réfléchie, j’ai suivi une formation intensive en développement web et web mobile à Doranco et Nexa Digital School, avec pour objectif de construire des outils numériques modernes et utiles, tout en consolidant mes compétences techniques.
+          </p>
 
-<p className="text-lg mb-6">
-  Au fil de ma formation, j’ai eu l’opportunité de travailler sur plusieurs projets concrets, notamment <strong>EasyDealz</strong> et <strong>Teona Passenger</strong>. Ces expériences m’ont permis de développer mes compétences techniques en <strong>Symfony</strong>, <strong>React</strong>, <strong>PHP</strong> ou encore <strong>JavaScript</strong>, tout en adoptant de bonnes pratiques de développement (versioning, API, responsive design...).
-</p>
+          <p className="text-lg mb-6">
+            Au cours de ma formation et de mes expériences professionnelles, j’ai participé à plusieurs projets concrets, tels que <strong>EasyDealz</strong>, <strong>Teona Passenger</strong>, une <strong>API Laravel pour la gestion d’événements</strong>, ainsi que l’<strong>Application SpaceX en Vue.js</strong> et un <strong>projet Angular </strong>  de gestion productive. Ces projets m’ont permis de développer mes compétences en <strong>Symfony</strong>, <strong>React</strong>, <strong>Vue.js</strong>, <strong>Angular</strong>, <strong>PHP</strong>, <strong>JavaScript/TypeScript</strong> et <strong>Python</strong>, tout en appliquant les bonnes pratiques du développement : MVC, API RESTful, responsive design, tests unitaires et fonctionnels, CI/CD.
+          </p>
 
-<p className="text-lg mb-6">
-  Curieux, rigoureux et toujours motivé par l’apprentissage, je cherche aujourd’hui à rejoindre une équipe dynamique où je pourrai contribuer à des projets innovants, tout en continuant à progresser sur le plan technique et humain. Mon objectif : évoluer dans un environnement stimulant où je pourrai mettre mes compétences au service d’une vision collective.
-</p>
+          <p className="text-lg mb-6">
+            Curieux, rigoureux et motivé par l’apprentissage, je cherche aujourd’hui à rejoindre une équipe dynamique où je pourrai contribuer à des projets innovants, tout en continuant à progresser techniquement et humainement. Mon objectif : évoluer dans un environnement stimulant, collaboratif et orienté solutions, où je pourrai mettre mes compétences au service de projets ambitieux et concrets.
+          </p>
+
 
 
           {/* Bouton de téléchargement */}
