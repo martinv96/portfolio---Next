@@ -4,6 +4,86 @@ import Image from "next/image";
 
 const projects = [
   {
+    id: "gdap",
+    title: "GDAP (Gestion des Accès du Plessis)",
+    description: "Plateforme interne de gestion des ressources, services et workflows de validation pour les services municipaux.",
+    imgSrc: "/mairie.JPG",
+    details: (
+      <>
+        <p>
+          GDAP est une application web robuste destinée aux services de la ville du Plessis-Trévise. Elle permet de gérer de manière centralisée les utilisateurs nominatifs, les services, et les ressources (logiciels et matériels). L'architecture repose sur Symfony et intègre un système complexe de validation (Workflows) pour automatiser et sécuriser les processus administratifs.
+        </p>
+
+        <a
+          href="https://github.com/martinv96/gestion-demandes-acces"
+          class="text-gray-300 hover:underline hover:text-gray-400 transition duration-200"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Voir le code source
+        </a>
+
+        <h3 className="mt-6 font-semibold">🧱 Structure du projet</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Framework Back-end : Symfony 6/7</li>
+          <li>Moteur de template : Twig (avec composants réutilisables)</li>
+          <li>Architecture : MVC (Model-View-Controller)</li>
+          <li>Base de données : MySQL / MariaDB (via Doctrine ORM)</li>
+          <li>Organisation : Repository pattern, Services personnalisés</li>
+        </ul>
+
+        <h3 className="mt-6 font-semibold">👤 Gestion des utilisateurs & accès</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Authentification sécurisée (UserInterface, PasswordHasher)</li>
+          <li>Transition vers des comptes nominatifs pour une meilleure traçabilité</li>
+          <li>Système de rôles dynamique (dérivé du code service : ROLE_RH, ROLE_DSI, ROLE_ST)</li>
+          <li>Contrôle d'accès granulaire via le SecurityBundle de Symfony</li>
+          <li>Gestion complète des profils (Firstname, Lastname, Email unique)</li>
+        </ul>
+
+        <h3 className="mt-6 font-semibold">⚙️ Workflows & Notifications</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Système de Workflow paramétrable (IsActive, StepOrder, Actions)</li>
+          <li>Historisation complète de chaque étape de validation</li>
+          <li>Gestion des transitions selon les droits spécifiques des services</li>
+          <li><strong>Notifications par email</strong> automatiques envoyées aux responsables lors des changements d'état</li>
+        </ul>
+
+        <h3 className="mt-6 font-semibold">📦 Ressources & Reporting</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Base de données unifiée pour Logiciels et Matériels</li>
+          <li>Statut d'attribution en temps réel (attribué, non attribué)</li>
+          <li>Pagination optimisée (SQL Offset/Limit) pour chaque catégorie</li>
+          <li><strong>Exportation Excel (XLS)</strong> des données filtrées pour le reporting administratif</li>
+          <li>Filtrage avancé par catégorie, service et statut</li>
+        </ul>
+
+        <h3 className="mt-6 font-semibold">🖼️ Interface Utilisateur (UX/UI)</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Dashboard complet avec navigation par onglets dynamiques</li>
+          <li>Templates Twig structurés avec intégration Bootstrap/Tailwind</li>
+          <li>Modales de confirmation pour les actions critiques (sécurité des données)</li>
+          <li>Interface responsive adaptée aux besoins des agents en bureau ou terrain</li>
+        </ul>
+
+        <h3 className="mt-6 font-semibold">🔍 Optimisation & Sécurité</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Requêtes Repository optimisées pour garantir la performance</li>
+          <li>Migrations Doctrine pour un versioning précis du schéma de base</li>
+          <li>Validation stricte des données côté serveur (Symfony Constraints)</li>
+          <li>Nettoyage et normalisation des entrées utilisateur (strtolower/trim)</li>
+        </ul>
+
+        <h3 className="mt-6 font-semibold">🚀 Évolutions prévues</h3>
+        <ul className="list-disc ml-5 space-y-1 text-sm">
+          <li>Tableau de bord statistique avec graphiques (Chart.js)</li>
+          <li>Déploiement via CI/CD pour automatiser les mises à jour</li>
+          <li>Module de gestion des signatures numériques</li>
+        </ul>
+      </>
+    ),
+  },
+  {
     id: "easydealz",
     title: "EasyDealz",
     description: "Plateforme de bons plans développée avec Symfony et React.",
@@ -561,19 +641,19 @@ export default function SectionProjets({ theme }) {
   const currentProject = projects.find((p) => p.id === modalId) || null;
 
   // Classes dynamiques selon thème
-  const sectionBg = theme === "light" ? "bg-white" : "bg-gray-900";
-  const sectionText = theme === "light" ? "text-gray-900" : "text-gray-100";
-  const sectionBorder = theme === "light" ? "border-gray-300" : "border-gray-700";
-  const cardBg = theme === "light" ? "bg-gray-50" : "bg-gray-800";
-  const cardBorder = theme === "light" ? "border-gray-200" : "border-gray-700";
-  const cardTextTitle = theme === "light" ? "text-gray-800" : "text-gray-200";
+  const sectionBg = theme === "light" ? "bg-light-bg" : "bg-gray-900";
+  const sectionText = theme === "light" ? "text-gray-800" : "text-gray-100";
+  const sectionBorder = theme === "light" ? "border-gray-200" : "border-gray-700";
+  const cardBg = theme === "light" ? "bg-white" : "bg-gray-800";
+  const cardBorder = theme === "light" ? "border-gray-100" : "border-gray-700";
+  const cardTextTitle = theme === "light" ? "text-gray-900" : "text-gray-200";
   const cardTextExcerpt = theme === "light" ? "text-gray-700" : "text-gray-300";
-  const buttonBg = "bg-blue-600 hover:bg-blue-700";
+  const buttonBg = theme === "light" ? "bg-blue-600 hover:bg-blue-700" : "bg-blue-600 hover:bg-blue-700";
   const buttonText = "text-white";
   const modalBg = theme === "light" ? "bg-white" : "bg-gray-800";
   const modalText = theme === "light" ? "text-gray-900" : "text-gray-100";
-  const modalBorder = theme === "light" ? "border-gray-200" : "border-gray-700";
-  const closeBtnText = theme === "light" ? "text-gray-600 hover:text-gray-900" : "text-gray-400 hover:text-white";
+  const modalBorder = theme === "light" ? "border-gray-100" : "border-gray-700";
+  const closeBtnText = theme === "light" ? "text-gray-500 hover:text-gray-900" : "text-gray-400 hover:text-white";
 
   return (
     <section

@@ -23,24 +23,21 @@ export default function Apropos() {
 
         {/* Texte */}
         <div className="max-w-3xl text-justify">
-          <h2 className="text-4xl font-bold mb-8 text-center md:text-left">
-            Parlons un peu de moi
-          </h2>
+         <h2 className="text-4xl font-bold mb-8 text-center md:text-left">
+  Parlons un peu de moi
+</h2>
 
-          <p className="text-lg mb-6">
-            Je m'appelle Martin Vallée, développeur web passionné basé en Île-de-France. Après une reconversion professionnelle réfléchie, j’ai suivi une formation intensive en développement web et web mobile à Doranco et Nexa Digital School, avec pour objectif de construire des outils numériques modernes et utiles, tout en consolidant mes compétences techniques.
-          </p>
+<p className="text-lg mb-6 leading-relaxed">
+  Je m'appelle Martin Vallée, développeur web basé en Île-de-France. Actuellement en formation Concepteur Développeur d'Applications (CDA) en alternance au sein de Nexa Digital School, je construis des outils numériques robustes tout en répondant aux enjeux concrets du terrain. Passionné par l'évolution des technologies, je prévois de poursuivre mon cursus en Mastère Intelligence Artificielle afin de spécialiser mon expertise dans la Data et l'IA.
+</p>
 
-          <p className="text-lg mb-6">
-            Au cours de ma formation et de mes expériences professionnelles, j’ai participé à plusieurs projets concrets, tels que <strong>EasyDealz</strong>, <strong>Teona Passenger</strong>, une <strong>API Laravel pour la gestion d’événements</strong>, ainsi que l’<strong>Application SpaceX en Vue.js</strong> et un <strong>projet Angular </strong>  de gestion productive. Ces projets m’ont permis de développer mes compétences en <strong>Symfony</strong>, <strong>React</strong>, <strong>Vue.js</strong>, <strong>Angular</strong>, <strong>PHP</strong>, <strong>JavaScript/TypeScript</strong> et <strong>Python</strong>, tout en appliquant les bonnes pratiques du développement : MVC, API RESTful, responsive design, tests unitaires et fonctionnels, CI/CD.
-          </p>
+<p className="text-lg mb-6 leading-relaxed">
+  Au travers de mes expériences, j’ai conçu des solutions structurantes comme GDAP (Gestion des Accès du Plessis), un système de gestion de parc et de workflows sous Symfony, ainsi que Teona Passenger en React. Mon expertise technique s'appuie sur des environnements variés comme Symfony, PHP, React et Vue.js, avec une attention constante portée aux bonnes pratiques : architecture MVC, APIs RESTful et gestion de bases de données relationnelles.
+</p>
 
-          <p className="text-lg mb-6">
-            Curieux, rigoureux et motivé par l’apprentissage, je cherche aujourd’hui à rejoindre une équipe dynamique où je pourrai contribuer à des projets innovants, tout en continuant à progresser techniquement et humainement. Mon objectif : évoluer dans un environnement stimulant, collaboratif et orienté solutions, où je pourrai mettre mes compétences au service de projets ambitieux et concrets.
-          </p>
-
-
-
+<p className="text-lg mb-6 leading-relaxed">
+  Curieux, rigoureux et orienté solutions, je cherche à mettre mes compétences au service de projets ambitieux au sein d’équipes dynamiques. Mon objectif est d'allier la solidité du développement web traditionnel aux opportunités offertes par l'IA pour créer des applications innovantes et performantes.
+</p>
           {/* Bouton de téléchargement */}
           <div className="mt-8 text-center md:text-left">
             <a

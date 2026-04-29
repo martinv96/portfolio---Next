@@ -10,73 +10,59 @@ import {
   FaServer,
   FaClipboardCheck,
   FaUsersCog,
+  FaChartLine,
 } from "react-icons/fa";
 
 const skills = [
   {
     icon: <FaCode className="text-3xl text-red-500" />,
     title: "Langages",
-    text: "Maîtrise de PHP 8, JavaScript/TypeScript (ES6+), Python. Solides bases en HTML5, CSS3 et SQL. POO appliquée sur tous les projets.",
+    text: "Maîtrise de PHP 8, JavaScript/TypeScript, Python et SQL. Compétences opérationnelles en Java (Spring Boot). Pratique confirmée de la POO et des principes SOLID.",
   },
   {
     icon: <FaProjectDiagram className="text-3xl text-red-500" />,
     title: "Frameworks & Librairies",
-    text: "Expérience confirmée avec Symfony 5/6, React, Vue.js, Next.js et Angular. Bonne connaissance de Flask, Bootstrap et TailwindCSS.",
+    text: "Expérience confirmée avec Symfony 5/6, React, Next.js, Vue.js et Angular. Bonne connaissance de Flask (Python) et des frameworks CSS (Tailwind, Bootstrap).",
+  },
+  {
+    icon: <FaChartLine className="text-3xl text-red-500" />,
+    title: "Data & Intelligence Artificielle",
+    text: "Préparation au Mastère IA. Visualisation de données avec Power BI et Grafana. Utilisation de Python pour le traitement de données et l'automatisation.",
   },
   {
     icon: <FaDatabase className="text-3xl text-red-500" />,
     title: "Bases de données & ORM",
-    text: "Très bonne maîtrise de MySQL et Doctrine ORM. Expérience avec SQLite pour tests automatisés.",
+    text: "Très bonne maîtrise de MySQL et Doctrine ORM. Utilisation d'outils de modélisation et gestion comme DBeaver et MySQL Workbench.",
   },
   {
     icon: <FaTools className="text-3xl text-red-500" />,
-    title: "Environnement & Outils",
-    text: "Utilisation quotidienne de Git, GitHub, VS Code, Postman, npm/yarn, Composer. Travail en environnement collaboratif Agile (Gitflow, CI/CD).",
+    title: "Environnement & DevOps",
+    text: "Utilisation quotidienne de Git, Docker et Postman. Travail en environnement collaboratif Agile (Gitflow, CI/CD, GitHub Actions).",
   },
   {
     icon: <FaCogs className="text-3xl text-red-500" />,
-    title: "Architectures & Bonnes pratiques",
-    text: "Approche structurée MVC, conception d’API RESTful, intégration responsive design et mobile-first, respect des normes PSR et bonnes pratiques de sécurité.",
+    title: "Architectures & Qualité",
+    text: "Approche structurée MVC, conception d’API RESTful, respect des normes PSR, tests unitaires (PHPUnit) et fonctionnels.",
+  },
+  {
+    icon: <FaShieldAlt className="text-3xl text-red-500" />,
+    title: "Sécurité & Bonnes pratiques",
+    text: "Protection contre les failles OWASP (XSS, CSRF), validation stricte des données et gestion dynamique des rôles/permissions.",
   },
   {
     icon: <FaUsersCog className="text-3xl text-red-500" />,
     title: "Méthodologies & Soft Skills",
-    text: "Travail en équipe, communication, autonomie, curiosité, sens de l’analyse et rigueur organisationnelle, grande adaptabilité et ouverture d’esprit, esprit orienté solution.",
-  },
-  {
-    icon: <FaClipboardCheck className="text-3xl text-red-500" />,
-    title: "Déploiement & CI/CD",
-    text: "Déploiement sur Vercel et Netlify. Utilisation de GitHub Actions pour CI/CD. Connaissance de Docker pour l’environnement de développement.",
-  },
-  {
-    icon: <FaShieldAlt className="text-3xl text-red-500" />,
-    title: "Sécurité Web",
-    text: "Respect des bonnes pratiques OWASP : protection CSRF, XSS, validation des données, gestion des rôles et permissions.",
-  },
-  {
-    icon: <FaBug className="text-3xl text-red-500" />,
-    title: "Tests & Qualité",
-    text: "Tests unitaires et fonctionnels avec PHPUnit et React Testing Library. Utilisation d’outils de qualité : ESLint, Prettier, SonarLint.",
-  },
-  {
-    icon: <FaServer className="text-3xl text-red-500" />,
-    title: "APIs & Intégrations",
-    text: "Conception et intégration d’APIs REST/GraphQL. Intégration de services tiers tels que Stripe et Gmail.",
-  },
-  {
-    icon: <FaCogs className="text-3xl text-red-500" />,
-    title: "Back-office & CMS",
-    text: "Création et gestion d’interfaces d’administration avec EasyAdmin. Expérience WordPress pour la gestion de contenu.",
+    text: "Autonomie, curiosité et adaptabilité. Esprit orienté solution développé au travers de projets complexes en milieu professionnel.",
   },
 ];
 
 
 export default function Competences({ theme }) {
   // Classes dynamiques selon thème
-  const sectionBg = theme === "light" ? "bg-white" : "bg-gray-900";
-  const textColor = theme === "light" ? "text-black" : "text-white";
+  const sectionBg = theme === "light" ? "bg-light-bg" : "bg-gray-900";
+  const textColor = theme === "light" ? "text-gray-800" : "text-white";
   const cardBg = theme === "light" ? "bg-white" : "bg-gray-800";
-  const cardBorder = theme === "light" ? "border-gray-200" : "border-gray-700";
+  const cardBorder = theme === "light" ? "border-gray-100" : "border-gray-700";
   const cardText = theme === "light" ? "text-gray-700" : "text-gray-300";
 
   return (
