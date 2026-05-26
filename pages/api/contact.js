@@ -7,23 +7,27 @@ export default async function handler(req, res) {
   }
 
   const { name, email, message } = req.body;
+  const mailerDsn = process.env.MAILER_DSN;
+  const mailerFrom = process.env.MAILER_FROM;
 
   if (!name || !email || !message) {
     return res.status(400).json({ error: "Tous les champs sont requis." });
   }
 
+  if (!mailerDsn || !mailerFrom) {
+    console.error("Variables d'environnement manquantes : MAILER_DSN / MAILER_FROM");
+    return res
+      .status(500)
+      .json({ error: "Configuration e-mail manquante sur le serveur." });
+  }
+
   try {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASS, // mot de passe d'application
-      },
-    });
+    const transporter = nodemailer.createTransport(mailerDsn);
 
     await transporter.sendMail({
-      from: `"Portfolio Contact" <${process.env.GMAIL_USER}>`,
-      to: process.env.GMAIL_USER,
+      from: `"Portfolio Contact" <${mailerFrom}>`,
+      to: mailerFrom,
+      replyTo: email,
       subject: "Nouveau message venant de votre portfolio",
       text: `Nom: ${name}\nEmail: ${email}\nMessage:\n${message}`,
     });
